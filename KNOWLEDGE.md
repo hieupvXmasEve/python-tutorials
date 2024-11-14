@@ -42,3 +42,9 @@ str()
 - Methods:  
   - Tuple: Limited methods (e.g., count(), index()).
   - List: More methods (e.g., append(), extend(), remove(), pop(), clear(), sort(), reverse()).
+
+## Function
+In Python, `*` and `**` are used to pass a variable number of arguments to a function.  
+- `*args` is used to pass a variable number of non-keyword arguments to a function. It allows you to pass any number of positional arguments.
+- `**kwargs` is used to pass a variable number of keyword arguments to a function. It allows you to pass any number of keyword arguments.
+Here is an example to illustrate their usage:
