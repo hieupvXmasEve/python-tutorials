@@ -90,3 +90,46 @@ my_functionTool(1, 2)  # => "Entering function my_function"
 
 print(my_functionTool.__name__)  # => 'my_function'
 print(my_functionTool.__code__.co_argcount)  # => 2
+
+
+def decorator_maker_with_arguments(decorator_arg1, decorator_arg2, decorator_arg3):
+    print(f"Decorator created with args: {decorator_arg1}, {decorator_arg2}")
+
+    def decorator(func):
+        # Bước 2: Nhận hàm gốc
+        print(f"Decorator applied to function: {func.__name__}")
+
+        def wrapper(function_arg1, function_arg2, function_arg3):
+            "This is the wrapper function"
+            print(
+                "The wrapper can access all the variables\n"
+                "\t- from the decorator maker: {0} {1} {2}\n"
+                "\t- from the function call: {3} {4} {5}\n"
+                "and pass them to the decorated function".format(
+                    decorator_arg1,
+                    decorator_arg2,
+                    decorator_arg3,
+                    function_arg1,
+                    function_arg2,
+                    function_arg3,
+                )
+            )
+            return func(function_arg1, function_arg2, function_arg3)
+
+        return wrapper
+
+    return decorator
+
+
+pandas = "Pandas"
+
+
+@decorator_maker_with_arguments(pandas, "Numpy", "Scikit-learn")
+def decorated_function_with_arguments(function_arg1, function_arg2, function_arg3):
+    print("This is the decorated function")
+
+
+decorated_function_with_arguments(pandas, "Science", "Tools")
+# decorator_maker_with_arguments(pandas, "Numpy", "Scikit-learn")(
+#     decorated_function_with_arguments
+# )(pandas, "Science", "Tools")
