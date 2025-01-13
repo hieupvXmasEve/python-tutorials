@@ -1,0 +1,9 @@
+id,serverity,name,location,detail,date
+1,High,Name_1,Location_3,Detail_1,8/12/2024
+2,Medium,Name_2,Location_8,Detail_2,8/6/2024
+3,Medium,Name_3,Location_10,Detail_3,12/11/2024
+4,High,Name_4,Location_2,Detail_4,27/08/2024
+5,Medium,Name_5,Location_7,Detail_5,11/9/2024
+6,Low,Name_6,Location_6,Detail_6,8/2/2024
+7,Low,Name_7,Location_2,Detail_7,16/05/2024
+8,Low,Name_8,Location_3,Detail_8,28/09/2024
